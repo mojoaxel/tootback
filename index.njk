@@ -1,0 +1,34 @@
+<style>
+	{% include 'toot.css' %}
+</style>
+<html>
+<header>
+	<img src="{{ actor.icon.url }}" alt="{{ actor.name }}'s avatar" />
+	<h1>Mastodon archive from {{ actor.name }}</h1>
+	{{ actor.summary | safe }}
+</header>
+<main>
+
+<details open="open">
+	<summary>Toots</summary>
+	<div>
+	{% include 'outbox.njk' %}
+	<div>
+</details>
+
+<details>
+	<summary>Likes</summary>
+	<div>
+	{% include 'likes.njk' %}
+	<div>
+</details>
+
+<details>
+	<summary>Bookmarks</summary>
+	<div>
+	{% include 'bookmarks.njk' %}
+	<div>
+</details>
+
+</main>
+</html>

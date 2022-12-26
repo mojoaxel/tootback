@@ -1,0 +1,31 @@
+{
+  "name": "tootback",
+  "version": "1.0.0-alpha.0",
+  "description": "Take ownership of your Mastodon data and get your toots back",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf .cache",
+    "start": "npx @11ty/eleventy --quiet --serve",
+    "build": "npx @11ty/eleventy --quiet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mojoaxel/tootback.git"
+  },
+  "keywords": [
+    "mastodon"
+  ],
+  "contributors": [
+    "Alexander Wunschik <dev@wunschik.net>"
+  ],
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mojoaxel/tootback/issues"
+  },
+  "homepage": "https://github.com/mojoaxel/tootback#readme",
+  "prettier": "@fullstax/prettier-config",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@fullstax/prettier-config": "^1.0.2"
+  }
+}
