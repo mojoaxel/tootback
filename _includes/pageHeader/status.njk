@@ -1,0 +1,26 @@
+<div class="status">
+	This is a static archive. This account is no longer active.
+{% if actor.movedTo %}
+	<br>
+	The user moved to <a href="{{ actor.movedTo }}">{{ actor.movedTo | userServerFormat }}</a>
+{% endif %}
+</div>
+
+<style type="text/css">
+.status {
+	position: relative;
+	color: var(--text-color);
+	border: 1px dotted var(--text-color-links);
+	border-radius: var(--borer-radius);
+	padding: 0.5rem;
+}
+.status::after {
+	content: "！";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 2rem;
+	color: var(--text-color-links);
+}
+</style>

@@ -7,5 +7,8 @@ module.exports = async function() {
 	const outboxFile = actor.outbox;
 	const dataRaw = await fs.readFile(`${archiveCache}/${outboxFile}`, 'utf8');
 	const data = JSON.parse(dataRaw);
-	return data.orderedItems.reverse();
+	return data.orderedItems
+					.reverse()
+					.filter(item => item.type === 'Create')
+					.filter(item => item.to.length > 1);
 };

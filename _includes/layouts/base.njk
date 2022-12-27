@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="./theme.css">
+	<style type="text/css">
+		html {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			width: 100%;
+			max-width: 40rem;
+			margin: 0 auto;
+			background-color: var(--page-background-color);
+			color: var(--text-color);
+			font-family: var(--main-font-family);
+		}
+		a, a:visited, a:active {
+			color: var(--text-color-links);
+			text-decoration: none;
+		}
+		a:hover {
+			color: var(--text-color-links);
+			text-decoration: underline;
+		}
+		header, article, footer {
+			width: 100%;
+			overflow: hidden;
+			background-color: var(--background-color);
+		}
+		footer {
+			margin-top: 1rem;
+		}
+		{% include 'toot.css' %}
+	</style>
+</head>
+
+<body>
+	<header>
+		{% include 'pageHeader.njk' %}
+	</header>
+	<article>
+		{{ content | safe }}
+	</article>
+	<footer>
+		{% include 'pageFooter.njk' %}
+	</footer>
+</body>
+
+</html>

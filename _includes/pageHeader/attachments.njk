@@ -1,0 +1,32 @@
+<dl class="attachments">
+{% for attachment in actor.attachment %}
+	<dt>{{ attachment.name }}</dt>
+	<dd>{{ attachment.value | safe }}</dd>
+{% endfor %}
+</dl>
+
+<style type="text/css">
+dl.attachments {
+	display: block;
+	margin: 0;
+	margin: 1rem 0 0 0;
+	padding: 0;
+	font-size: smaller;
+	background-color: var(--page-background-color);
+	border-radius: var(--border-radius);
+}
+.attachments dt,
+.attachments dd {
+	margin: 0;
+	padding: 0 1rem;
+}
+.attachments dt {
+	text-transform: uppercase;
+	color: var(--text-color-secondary);
+	padding-top: 1rem;
+}
+.attachments dd {
+	border-bottom: 1px solid var(--background-color);
+	padding-bottom: 1rem;
+}
+</style>

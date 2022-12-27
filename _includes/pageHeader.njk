@@ -1,0 +1,80 @@
+<div id="page_header">
+	<div class="banner">
+		<img 
+			width="100%"
+			src="{{ actor.image.url }}" 
+			alt="background banner" />
+	</div>
+	<section class="content">
+		<div class="user">
+			<img class="avatar"
+				src="{{ actor.icon.url }}" 
+				alt="user avatar" />
+			<div class="names">
+				<div class="name">{{ actor.name }}</div>
+				<ul>
+					<li>
+						<a href="{{ actor.url }}">{{ actor.url | userServerFormat }}</a>
+					</li>
+					{% if actor.alsoKnownAs %}
+						{% for alias in actor.alsoKnownAs %}
+							<li>
+								<a href="{{ alias }}">{{ alias | userServerFormat }}</a>
+							</li>
+						{% endfor %}
+					{% endif %}
+					<li>
+						<a href="{{ actor.movedTo }}">{{ actor.movedTo | userServerFormat }}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="summary">
+			{{ actor.summary | safe }}
+		</div>
+
+		{% include 'pageHeader/status.njk' %}
+
+		{% if meta.showAttachments and actor.attachment %}
+			{% include 'pageHeader/attachments.njk' %}
+		{% endif %}
+	</section>
+	<div class="userStatistics">
+		{% include 'pageHeader/userStatistics.njk' %}
+	</div>
+</div>
+
+<style type="text/css">
+#page_header {
+	border-bottom: 1px solid var(--page-background-color);
+}
+#page_header .content {
+	padding: 1.5rem;
+}
+#page_header .content .user {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+#page_header .content .user .avatar {
+	width: 7rem;
+	height: 7rem;
+	border-radius: var(--borer-radius);
+	border: 2px solid var(--text-color);
+}
+#page_header .content .user .names {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+}
+#page_header .content .user .names .name {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin: 0.5rem 0;
+}
+#page_header .content .user .names ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+</style>

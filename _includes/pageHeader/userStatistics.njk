@@ -1,0 +1,24 @@
+<ul class="user_statistics">
+	<li><em>{{ posts.length }}</em> Posts</li>
+	<li><em>{{ replies.length }}</em> Replies</li>
+	<li><em>{{ likes.length }}</em> Likes</li>
+	<li><em>{{ bookmarks.length }}</em> Bookmarks</li>
+	<li><em>{{ media.length }}</em> Media</li>
+</ul>
+
+<style type="text/css">
+ul.user_statistics {
+	list-style-type: none;
+	display: flex;
+	gap: 1rem;
+	flex-direction: row;
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 0 1.5rem;
+	color: var(--text-color-secondary);
+}
+ul.user_statistics li em {
+	font-weight: bold;
+	font-style: normal;
+}
+</style>

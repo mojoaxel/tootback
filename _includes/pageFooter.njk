@@ -1,0 +1,22 @@
+<div id="page_footer">
+	<ul class="content">
+		<li><a href="{{ pkg.homepage }}">GitHub</a></li>
+		{% if meta.imprint %}
+		<li><a href="{{ meta.imprint }}">Imprint</a></li>
+		{% endif %}
+	</ul>
+</div>
+
+<style type="text/css">
+#page_footer {
+	padding: 1.5rem;
+}
+#page_footer ul.content {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex-direction: row;
+	justify-content: space-between;
+}
+</style>

@@ -1,0 +1,9 @@
+:root {
+	--page-background-color: #282c37;
+	--background-color: #313543;
+	--text-color: #FFF;
+	--text-color-secondary: #9baec8;
+	--text-color-links: #8c8dff;
+	--main-font-family: 'Roboto', sans-serif;
+	--borer-radius: 0.5rem;
+}

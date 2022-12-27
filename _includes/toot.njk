@@ -1,13 +1,27 @@
 <section class="toot">
 	<header>
-		<span><a href="{{ toot.actor }}">{{ toot.actor }}</a></span>
-		<span>{{ toot.published }}</span>
+		<div class="user">
+			<div class="avatar">
+				<img 
+					src="{{ actor.icon.url }}" 
+					alt="users avatar">
+			</div>
+			<div class="name">
+				<span class="name">{{ actor.name }}</span>
+				<a class="id" href="{{ toot.actor }}">{{ toot.actor | userServerFormat}}</a>
+			</div>
+		</div>
+		<div class="published">
+			{{ toot.published | localDateTime }}
+		</div>
 	</header>
-	{# Render Toot #}
-	{% if (toot.type == "Create") %}
-		{% include 'toot/Create.njk' %}
-	{# Render Boost #}
-	{% elif (toot.type == "Announce") %}
-		{% include 'toot/Announce.njk' %}
-	{% endif %}
+	<div class="content">
+		{# Render Toot #}
+		{% if (toot.type == "Create") %}
+			{% include 'toot/Create.njk' %}
+		{# Render Boost #}
+		{% elif (toot.type == "Announce") %}
+			{% include 'toot/Announce.njk' %}
+		{% endif %}
+	</div>
 </section>

@@ -1,0 +1,51 @@
+const path = require("path"); 
+const prettier = require("prettier");
+
+const { userFromUrl, archiveCache } = require('./helpers.js');
+
+module.exports = function(eleventyConfig) {
+	eleventyConfig.ignores.add("./README.md");
+
+	eleventyConfig.addPassthroughCopy({
+		'theme.css': 'theme.css',
+		[`${archiveCache}/media_attachments`]: 'media_attachments',
+		[`${archiveCache}/avatar.jpg`]: 'avatar.jpg',
+		[`${archiveCache}/header.jpeg`]: 'header.jpeg'
+	});
+
+	eleventyConfig.addFilter("isoString", (date = Date.now()) => 
+		new Date(date).toISOString()
+	);
+
+	eleventyConfig.addFilter("localDateTime", (date = Date.now()) => 
+		new Date(date).toLocaleString()
+	);
+
+	eleventyConfig.addFilter('json', (obj, spaces = 2) => 
+		JSON.stringify(obj, null, spaces)
+	);
+
+	eleventyConfig.addFilter('userServerFormat', url => {
+		return userFromUrl(url);
+	});
+	
+	eleventyConfig.addTransform("prettier", function (content, outputPath) {
+		const extname = path.extname(outputPath);
+		switch (extname) {
+			case ".html":
+			case ".json":
+				// Strip leading period from extension and use as the Prettier parser.
+				const parser = extname.replace(/^./, "");
+				return prettier.format(content, { parser });
+			default:
+				return content;
+		}
+	});
+
+	return {
+		dir: {
+			input: ".",
+			output: "_site",
+		},
+	};
+};

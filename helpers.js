@@ -1,6 +1,22 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+/**
+ * Takes in a url in that format:
+ *   https://server.tld/@username
+ * and returns a string like this:
+ *   @username@server.tld
+ */
+function userFromUrl(url) {
+	const urlObj = new URL(url);
+	const user = urlObj.pathname
+					.replace('/users/', '@')
+					.replace(/^\//,'')
+					.replace(/\/$/,'');
+	const server = urlObj.host;
+	return `${user}@${server}`;
+};
+
 /* Extract all *.tar.gz files from the folder "./archives" into the folder ".cache" */
 function extractAllZips() {
 	const zips = fs.readdirSync('./archives').filter((file) => file.endsWith('.tar.gz'));
@@ -43,5 +59,6 @@ if (!fs.existsSync('.cache')) {
 const archiveCache = getLatestArchiveCache();
 
 module.exports = {
+	userFromUrl,
 	archiveCache
 }
