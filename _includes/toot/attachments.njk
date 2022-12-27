@@ -1,0 +1,9 @@
+{% for attachment in toot.object.attachment %}
+<a href="{{ attachment.url }}">
+	<img class="attachment"
+		style="max-width:{{ attachment.width }}px;max-height:{{ attachment.height }}px;"
+		src="{{ attachment.url }}" 
+		alt="{{ attachment.name }}"
+		loading="lazy" />
+</a>
+{% endfor %}

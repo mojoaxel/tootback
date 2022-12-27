@@ -39,3 +39,7 @@
 	color: var(--text-color-secondary);
 	align-self: flex-start;
 }
+
+.toot .attachment {
+	width: 100%;
+}
