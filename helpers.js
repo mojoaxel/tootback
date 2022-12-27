@@ -1,5 +1,11 @@
+const path = require("path");
 const fs = require('fs');
 const { execSync } = require('child_process');
+
+if (!fs.existsSync('.cache')) {
+	fs.mkdirSync('.cache');
+}
+const archiveCache = getLatestArchiveCache();
 
 /**
  * Takes in a url in that format:
@@ -52,13 +58,26 @@ function getLatestArchiveCache() {
 	return latestArchiveCache;
 }
 
-
-if (!fs.existsSync('.cache')) {
-	fs.mkdirSync('.cache');
+function getFilesFromDirectory(directory) {
+	let files = [];
+	const getFilesRecursively = (dir) => {
+		const filesInDirectory = fs.readdirSync(dir);
+		for (const file of filesInDirectory) {
+			const absolute = path.join(dir, file);
+			if (fs.statSync(absolute).isDirectory()) {
+				getFilesRecursively(absolute);
+			} else {
+				files.push(absolute);
+			}
+		}
+	}
+	getFilesRecursively(directory);
+	files = files.map(filePath => filePath.replace(archiveCache, '.'));
+	return files;
 }
-const archiveCache = getLatestArchiveCache();
 
 module.exports = {
+	getFilesFromDirectory,
 	userFromUrl,
 	archiveCache
 }
