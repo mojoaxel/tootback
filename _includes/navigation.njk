@@ -12,7 +12,12 @@
 			Likes
 		</a>
 	</li>
-	<li><em>{{ bookmarks.length }}</em> Bookmarks</li>
+	<li {% if page.fileSlug == 'bookmarks' %} class="active" {% endif %}>
+		<a href="/bookmarks/">
+			<em>{{ bookmarks.length }}</em>
+			Bookmarks
+		</a>
+	</li>
 	<li><em>{{ media.length }}</em> Media</li>
 	<li {% if page.fileSlug == 'tags' %} class="active" {% endif %}>
 		<a href="/tags/">

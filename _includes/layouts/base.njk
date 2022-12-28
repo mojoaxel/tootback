@@ -9,8 +9,10 @@
 			padding: 0;
 		}
 		body {
-			width: 100%;
+			display: flex;
+			flex-direction: column;
 			max-width: 40rem;
+			min-height: 100vh;
 			margin: 0 auto;
 			background-color: var(--page-background-color);
 			color: var(--text-color);
@@ -24,10 +26,13 @@
 			color: var(--text-color-links);
 			text-decoration: underline;
 		}
-		header, article, footer {
+		header, main, footer {
 			width: 100%;
-			overflow: hidden;
 			background-color: var(--background-color);
+			flex-grow: 1;
+		}
+		main {
+			flex-grow: 2;
 		}
 		footer {
 			margin-top: 1rem;
@@ -43,9 +48,9 @@
 			{% include 'navigation.njk' %}
 		</nav>
 	</header>
-	<article>
+	<main>
 		{{ content | safe }}
-	</article>
+	</main>
 	<footer>
 		{% include 'pageFooter.njk' %}
 	</footer>
