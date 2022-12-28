@@ -1,13 +1,13 @@
 const path = require("path"); 
 const prettier = require("prettier");
 
-const { userFromUrl, archiveCache } = require('./helpers.js');
+const { userFromUrl, archiveCache } = require('./src/helpers.js');
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.ignores.add("./README.md");
 
 	eleventyConfig.addPassthroughCopy({
-		'theme.css': 'theme.css',
+		'src/theme.css': 'theme.css',
 		[`${archiveCache}/media_attachments`]: 'media_attachments',
 		[`${archiveCache}/avatar.jpg`]: 'avatar.jpg',
 		[`${archiveCache}/header.jpeg`]: 'header.jpeg'
@@ -44,7 +44,7 @@ module.exports = function(eleventyConfig) {
 
 	return {
 		dir: {
-			input: ".",
+			input: "src",
 			output: "_site",
 		},
 	};
