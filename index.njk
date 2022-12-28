@@ -1,5 +1,16 @@
 ---
 layout: layouts/base.njk
 ---
+<ul class="toots">
+{% for toot in posts %}
+	{% include "toot.njk" %}
+{% endfor %}
+</ul>
 
-{% include 'outbox.njk' %}
+<style type="text/css">
+ul.toots {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+</style>
