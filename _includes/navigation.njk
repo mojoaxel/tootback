@@ -1,4 +1,4 @@
-<ul class="user_statistics">
+<ul class="navigation">
 	<li {% if page.fileSlug == '' %} class="active" {% endif %}>
 		<a href="/">
 			<em>{{ posts.length }}</em>
@@ -6,7 +6,12 @@
 		</a>
 	</li>
 	<li><em>{{ replies.length }}</em> Replies</li>
-	<li><em>{{ likes.length }}</em> Likes</li>
+	<li {% if page.fileSlug == 'likes' %} class="active" {% endif %}>
+		<a href="/likes/">
+			<em>{{ likes.length }}</em>
+			Likes
+		</a>
+	</li>
 	<li><em>{{ bookmarks.length }}</em> Bookmarks</li>
 	<li><em>{{ media.length }}</em> Media</li>
 	<li {% if page.fileSlug == 'tags' %} class="active" {% endif %}>
@@ -18,7 +23,7 @@
 </ul>
 
 <style type="text/css">
-ul.user_statistics {
+ul.navigation {
 	list-style-type: none;
 	display: flex;
 	justify-content: space-between;
@@ -28,14 +33,14 @@ ul.user_statistics {
 	color: var(--text-color-secondary);
 	background-color: var(--page-background-color);
 }
-ul.user_statistics li {
+ul.navigation li {
 	display: block;
 	padding: 1rem;
 }
-ul.user_statistics li.active {
+ul.navigation li.active {
 	background-color: var(--background-color);
 }
-ul.user_statistics li em {
+ul.navigation li em {
 	font-weight: bold;
 	font-style: normal;
 }
