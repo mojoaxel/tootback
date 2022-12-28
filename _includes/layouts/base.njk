@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<link rel="stylesheet" href="./theme.css">
+	<link rel="stylesheet" href="/theme.css">
 	<style type="text/css">
 		html {
 			margin: 0;
@@ -39,6 +39,9 @@
 <body>
 	<header>
 		{% include 'pageHeader.njk' %}
+		<nav>
+			{% include 'navigation.njk' %}
+		</nav>
 	</header>
 	<article>
 		{{ content | safe }}

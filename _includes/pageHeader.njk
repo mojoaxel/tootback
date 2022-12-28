@@ -2,13 +2,13 @@
 	<div class="banner">
 		<img 
 			width="100%"
-			src="{{ actor.image.url }}" 
+			src="/{{ actor.image.url }}" 
 			alt="background banner" />
 	</div>
 	<section class="content">
 		<div class="user">
 			<img class="avatar"
-				src="{{ actor.icon.url }}" 
+				src="/{{ actor.icon.url }}" 
 				alt="user avatar" />
 			<div class="names">
 				<div class="name">{{ actor.name }}</div>
@@ -39,9 +39,6 @@
 			{% include 'pageHeader/attachments.njk' %}
 		{% endif %}
 	</section>
-	<div class="userStatistics">
-		{% include 'pageHeader/userStatistics.njk' %}
-	</div>
 </div>
 
 <style type="text/css">
@@ -49,7 +46,7 @@
 	border-bottom: 1px solid var(--page-background-color);
 }
 #page_header .content {
-	padding: 1.5rem;
+	padding:var(--padding);
 }
 #page_header .content .user {
 	display: flex;
@@ -68,7 +65,7 @@
 	text-align: right;
 }
 #page_header .content .user .names .name {
-	font-size: 1.5rem;
+	font-size:var(--padding);
 	font-weight: bold;
 	margin: 0.5rem 0;
 }

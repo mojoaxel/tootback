@@ -1,5 +1,10 @@
 <ul class="user_statistics">
-	<li><em>{{ posts.length }}</em> Posts</li>
+	<li {% if page.fileSlug == '' %} class="active" {% endif %}>
+		<a href="/">
+			<em>{{ posts.length }}</em>
+			Posts
+		</a>
+	</li>
 	<li><em>{{ replies.length }}</em> Replies</li>
 	<li><em>{{ likes.length }}</em> Likes</li>
 	<li><em>{{ bookmarks.length }}</em> Bookmarks</li>
@@ -11,12 +16,19 @@
 ul.user_statistics {
 	list-style-type: none;
 	display: flex;
-	gap: 1rem;
+	justify-content: space-between;
 	flex-direction: row;
 	margin: 0;
-	margin-bottom: 1rem;
-	padding: 0 1.5rem;
+	padding: 0;
 	color: var(--text-color-secondary);
+	background-color: var(--page-background-color);
+}
+ul.user_statistics li {
+	display: block;
+	padding: 1rem;
+}
+ul.user_statistics li.active {
+	background-color: var(--background-color);
 }
 ul.user_statistics li em {
 	font-weight: bold;
