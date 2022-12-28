@@ -9,7 +9,12 @@
 	<li><em>{{ likes.length }}</em> Likes</li>
 	<li><em>{{ bookmarks.length }}</em> Bookmarks</li>
 	<li><em>{{ media.length }}</em> Media</li>
-	<li><em>{{ tags.length }}</em> Tags</li>
+	<li {% if page.fileSlug == 'tags' %} class="active" {% endif %}>
+		<a href="/tags/">
+			<em>{{ tags.length }}</em>
+			Tags
+		</a>
+	</li>
 </ul>
 
 <style type="text/css">
