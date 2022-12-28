@@ -18,7 +18,12 @@
 			Bookmarks
 		</a>
 	</li>
-	<li><em>{{ media.length }}</em> Media</li>
+	<li {% if page.fileSlug == 'media' %} class="active" {% endif %}>
+		<a href="/media/">
+			<em>{{ media.length }}</em>
+			Media
+		</a>
+	</li>
 	<li {% if page.fileSlug == 'tags' %} class="active" {% endif %}>
 		<a href="/tags/">
 			<em>{{ tags.length }}</em>
