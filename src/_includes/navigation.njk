@@ -1,31 +1,31 @@
 <ul class="navigation">
-	<li {% if page.fileSlug == '' %} class="active" {% endif %}>
-		<a href="/">
+	<li {% if page.fileSlug == './index.html' %} class="active" {% endif %}>
+		<a href="./index.html">
 			<em>{{ posts.length }}</em>
 			Posts
 		</a>
 	</li>
 	<li><em>{{ replies.length }}</em> Replies</li>
-	<li {% if page.fileSlug == 'likes' %} class="active" {% endif %}>
-		<a href="/likes/">
+	<li {% if page.fileSlug == './likes.html' %} class="active" {% endif %}>
+		<a href="./likes.html">
 			<em>{{ likes.length }}</em>
 			Likes
 		</a>
 	</li>
-	<li {% if page.fileSlug == 'bookmarks' %} class="active" {% endif %}>
-		<a href="/bookmarks/">
+	<li {% if page.fileSlug == './bookmarks.html' %} class="active" {% endif %}>
+		<a href="./bookmarks.html">
 			<em>{{ bookmarks.length }}</em>
 			Bookmarks
 		</a>
 	</li>
-	<li {% if page.fileSlug == 'media' %} class="active" {% endif %}>
-		<a href="/media/">
+	<li {% if page.fileSlug == './media.html' %} class="active" {% endif %}>
+		<a href="./media.html">
 			<em>{{ media.length }}</em>
 			Media
 		</a>
 	</li>
-	<li {% if page.fileSlug == 'tags' %} class="active" {% endif %}>
-		<a href="/tags/">
+	<li {% if page.fileSlug == './tags.html' %} class="active" {% endif %}>
+		<a href="./tags.html">
 			<em>{{ tags.length }}</em>
 			Tags
 		</a>
