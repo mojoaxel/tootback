@@ -1,5 +1,3 @@
-> ⚠️ This project is in active development not not ready to be used. See [#1](https://github.com/mojoaxel/tootback/issues/1)
-
 # tootback
 
 Host your own Mastodon archive.
@@ -8,11 +6,12 @@ Host your own Mastodon archive.
 
 1. Clone or download this repository,
 1. In your terminal `cd` to the folders of the project.
-1. Install [Node.js](https://nodejs.org/).
 1. Download your mastodon archive and put the resulting `archive-xxxxxx.tar.gz` in the projects `archive` folder. You can have multiple archives in that folder, we will always use the newest.
 1. Adopt settings in `_data/meta.json`.
+1. Make sure you have [Node.js](https://nodejs.org/) installed on your system.
+1. Install all dependencies by running `npm ci`.
 1. Build the website by calling `npm run build`.
-1. Copy everything from the `_site` folder to a static webserver.
+1. Copy everything from the `_site` folder to a static webserver or simply enable [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) for the `gh-pages` branch.
 
 ## FAQs
 
