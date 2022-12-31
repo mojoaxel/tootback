@@ -2,6 +2,11 @@
 
 Host your own Mastodon archive.
 
+## Examples
+
+* https://mojoaxel.github.io/chaos.social-mojoaxel/
+* https://mojoaxel.github.io/bitcoinhackers.org-mojoaxel/
+
 ## Usage
 
 1. Clone or download this repository,
