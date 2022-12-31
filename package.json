@@ -1,6 +1,6 @@
 {
   "name": "tootback",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Take ownership of your Mastodon data and get your toots back",
   "main": "index.js",
   "scripts": {
