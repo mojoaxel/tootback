@@ -9,8 +9,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		'src/theme.css': 'theme.css',
 		[`${archiveCache}/media_attachments`]: 'media_attachments',
-		[`${archiveCache}/avatar.jpg`]: 'avatar.jpg',
-		[`${archiveCache}/header.jpeg`]: 'header.jpeg'
+		[`${archiveCache}/avatar.*`]: '/',
+		[`${archiveCache}/header.*`]: '/'
 	});
 
 	eleventyConfig.addFilter("isoString", (date = Date.now()) => 
