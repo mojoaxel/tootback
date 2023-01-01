@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 1rem;
 	width: 100%;
+	word-break: break-word;
 	border-bottom: 1px solid var(--page-background-color);
 }
 
@@ -38,6 +39,7 @@
 .toot .published {
 	color: var(--text-color-secondary);
 	align-self: flex-start;
+	text-align: right;
 }
 
 .toot .attachment {

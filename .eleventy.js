@@ -1,5 +1,6 @@
 const path = require("path"); 
 const prettier = require("prettier");
+const meta = require('./src/_data/meta.js');
 
 const { userFromUrl, archiveCache } = require('./src/helpers.js');
 
@@ -18,7 +19,7 @@ module.exports = function(eleventyConfig) {
 	);
 
 	eleventyConfig.addFilter("localDateTime", (date = Date.now()) => 
-		new Date(date).toLocaleString()
+		new Date(date).toLocaleString(meta.lang, { timeZone: meta.timeZone })
 	);
 
 	eleventyConfig.addFilter('json', (obj, spaces = 2) => 
