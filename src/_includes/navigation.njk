@@ -5,7 +5,12 @@
 			Posts
 		</a>
 	</li>
-	<li><em>{{ replies.length }}</em> Replies</li>
+	{#
+	<li>
+			<em>{{ replies.length }}</em>
+			Replies
+	</li>
+	#}
 	<li {% if page.fileSlug == './likes.html' %} class="active" {% endif %}>
 		<a href="./likes.html">
 			<em>{{ likes.length }}</em>
